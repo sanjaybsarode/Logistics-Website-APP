@@ -42,8 +42,9 @@ This project requires a Gemini API key to power its AI features.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/sanjaybsarode/new-website-for-logistics-.git
-    cd new-website-for-logistics-
+    git clone https://github.com/sanjaybsarode/Logistics-Website-APP.git
+    
+    cd Logistics-Website-APP
     ```
 
 2.  **Install dependencies:**
@@ -57,38 +58,31 @@ This project requires a Gemini API key to power its AI features.
     ```
     The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
 
-## Deployment to GitHub Pages
+## Deployment
 
-This project is configured for easy deployment to GitHub Pages.
+This application has been configured for easy deployment. **You do not need to edit any files manually.**
 
-### Step 1: Run the Deploy Script
+### Option 1: Vercel (Recommended)
 
-Make sure all your latest changes are committed and pushed to your GitHub repository. Then, run the following command in your terminal:
+Vercel is the simplest way to deploy this project.
 
-```bash
-npm run deploy
-```
+1.  **Fork this repository** to your own GitHub account.
+2.  Go to [Vercel](https://vercel.com/new) and import your forked repository. Vercel will automatically detect that it is a Vite project.
+3.  **Configure Environment Variables**: In the Vercel project settings, add an environment variable named `API_KEY` and set its value to your Gemini API key.
+4.  Click **Deploy**. Vercel will automatically use the correct `npm run build` command and deploy your site.
 
-This command will automatically:
-1.  Build your application for production.
-2.  Push the contents of the `dist` build folder to a special `gh-pages` branch on your GitHub repository.
+### Option 2: GitHub Pages
 
-### Step 2: Configure GitHub Pages Settings
+The project is already configured for deployment to GitHub Pages.
 
-After the script finishes, you need to tell GitHub to use the `gh-pages` branch as the source for your live site.
+1.  Make sure the `homepage` URL in your `package.json` is correct. It is currently set to: `"https://sanjaybsarode.github.io/Logistics-Website-APP"`. You may need to change `sanjaybsarode` to your GitHub username.
 
-1.  Go to your repository on GitHub: `https://github.com/sanjaybsarode/new-website-for-logistics-`
-2.  Click on the **"Settings"** tab.
-3.  In the left sidebar, click on **"Pages"**.
-4.  Under "Build and deployment", for the **Source**, select **"Deploy from a branch"**.
-5.  Set the branch to **`gh-pages`** and the folder to **`/(root)`**.
-6.  Click **"Save"**.
+2.  Run the deploy script from your terminal:
+    ```bash
+    npm run deploy
+    ```
+    This single command builds the app with the correct paths and pushes it to the `gh-pages` branch for you.
 
-After a minute or two, your website will be live at: **https://sanjaybsarode.github.io/new-website-for-logistics-/**
+3.  Go to your repository **Settings > Pages**. Under "Build and deployment", ensure the source is set to **Deploy from a branch** and the branch is **`gh-pages`** with the `/ (root)` folder.
 
-## Available Scripts
-
-- `npm run dev`: Starts the development server.
-- `npm run build`: Builds the app for production to the `dist` folder.
-- `npm run preview`: Locally previews the production build.
-- `npm run deploy`: Deploys the application to GitHub Pages.
+Your site will be live in a few minutes.
