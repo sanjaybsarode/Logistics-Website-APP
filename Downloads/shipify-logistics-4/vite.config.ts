@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     // IMPORTANT: Set base to '/REPO_NAME/' for GitHub Pages.
-    base: '/Logistics-Website-APP/',
+    base: 'Logistics-Website-APP/',
     // This makes `process.env.API_KEY` available in your client-side code.
     // Vite will replace it with the actual value from the environment during the build.
     define: {
